@@ -14,10 +14,17 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
-        return null;
+    public Integer countYZ(String input) {
+        int words = 0; // set word counter to 0
+        for (int i = 0; i < input.length(); i++) { //for loop to loop through the string
+            if (input.charAt(i) == 'y' || input.charAt(i) == 'z') { // searching for y and z in 'input'
+                if ((i == (input.length() - 1)) || !Character.isLetter(input.charAt(i + 1))) {
+                    words++;
+                }
+            }
+        }
+        return words;
     }
-
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
      * been removed (not case sensitive). You may assume that the remove string is length 1 or more.
